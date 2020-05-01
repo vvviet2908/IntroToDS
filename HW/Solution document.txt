@@ -1,0 +1,15 @@
+Q1:
+First, I assign the rating number as a vector
+	x <- c(5,4,4,5,4,4,4,3.5,2,2.5,1.5,2,5,3,3,3,5,5,2)
+Then, using the pnorm function to calculate the probaility distribution
+	p <- 1-pnorm(3,mean(x),sd(x))
+I get the result ~0.68
+
+Q2:
+First I call the library, and import the data
+	library(readxl)
+	data <- read.csv("ratings.csv", header=TRUE)
+Then I calculate the mean, standard deviation and using the pnorm function to calculate the probaility distribution
+	u<-mean(data[["rating"]])
+	s<-sd(data[["rating"]])
+	p<-1-pnorm(3,mean=u,sd=s)

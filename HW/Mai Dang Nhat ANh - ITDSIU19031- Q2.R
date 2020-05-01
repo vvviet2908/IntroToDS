@@ -1,0 +1,6 @@
+library(readxl)
+data <- read.csv("ratings.csv", header=TRUE)
+u<-mean(data[["rating"]])
+s<-sd(data[["rating"]])
+p<-1-pnorm(3,mean=u,sd=s)
+cat("The probability distribution is", p) 
